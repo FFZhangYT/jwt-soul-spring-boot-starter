@@ -29,7 +29,7 @@ public class JwtSoulProperties {
     private Integer maxToken;
 
     /**
-     * 7天 单位:秒 使用
+     * 默认7天 单位:秒
      */
     private Long expiration = 604800L;
 
