@@ -1,10 +1,10 @@
-#jwt-soul-spring-boot-starter
+# jwt-soul-spring-boot-starter
 
 [![](https://jitpack.io/v/FFZhangYT/Jwt-soul-spring-boot-starter.svg)](https://jitpack.io/#FFZhangYT/Jwt-soul-spring-boot-starter)
 
-###简述
+### 简述
     jwt-soul的springboot使用依赖
-###依赖方式
+### 依赖方式
     <dependency>
         <groupId>com.github.FFZhangYT</groupId>
         <artifactId>Jwt-soul-spring-boot-starter</artifactId>
@@ -18,7 +18,7 @@
         </repository>
     </repositories>
 
-###SpringBoot配置
+### SpringBoot配置
    <br>
    
    &emsp;在你的`Application`类上面加入`@EnableJwtPermission`注解，在`application.properties`有如下配置可选：
