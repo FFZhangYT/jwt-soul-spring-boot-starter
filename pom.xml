@@ -15,13 +15,14 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <springboot.version>2.0.1.RELEASE</springboot.version>
+        <jwtsoul.version>3.0.0</jwtsoul.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.github.FFZhangYT</groupId>
             <artifactId>jwt-soul</artifactId>
-            <version>${project.version}</version>
+            <version>${jwtsoul.version}</version>
         </dependency>
 
         <dependency>
