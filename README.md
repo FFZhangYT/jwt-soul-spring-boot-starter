@@ -3,8 +3,8 @@
 [![](https://jitpack.io/v/FFZhangYT/Jwt-soul-spring-boot-starter.svg)](https://jitpack.io/#FFZhangYT/Jwt-soul-spring-boot-starter)
 
 ###简述
-        jwt-soul的springboot使用依赖
-###依赖
+    jwt-soul的springboot使用依赖
+###依赖方式
     <dependency>
         <groupId>com.github.FFZhangYT</groupId>
         <artifactId>Jwt-soul-spring-boot-starter</artifactId>
@@ -67,9 +67,8 @@ public class LoginController {
 
 token默认过期时间是一天，设置过期时间方法（单位秒）：
 
-```java
-Token token = tokenStore.createNewToken(userId, permissions, roles, 60*60*24*30);
-```
+    Token token = tokenStore.createNewToken(userId, permissions, roles, 60*60*24*30);
+
 
 <br>
 
