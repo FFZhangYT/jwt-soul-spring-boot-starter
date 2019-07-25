@@ -6,7 +6,7 @@
 
     <groupId>org.yt.jwts</groupId>
     <artifactId>jwt-soul-spring-boot-starter</artifactId>
-    <version>3.0.0</version>
+    <version>3.0.2</version>
     <packaging>jar</packaging>
 
 
@@ -15,7 +15,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <springboot.version>2.0.1.RELEASE</springboot.version>
-        <jwtsoul.version>3.0.0</jwtsoul.version>
+        <jwtsoul.version>3.0.1</jwtsoul.version>
     </properties>
 
     <dependencies>
