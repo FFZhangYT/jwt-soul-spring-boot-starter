@@ -46,6 +46,24 @@
    ```
    <br>
 
+ &emsp;SpringBoot的yml配置,排除swagger-ui的路径写法:
+    
+    jwts:
+     store-type: 0
+     ## 拦截路径，默认是/**
+     path: /**
+     ## 排除拦截路径，默认无
+     exclude-path:
+       - /swagger-ui.html
+       - /webjars/**
+       - /swagger-resources/**
+       - /error
+       - /csrf
+       - /error
+       - /
+     ## 单个用户最大token数，默认-1不限制
+     max-token: 10
+   <br>
 ### 登录签发token
 
 ```java
