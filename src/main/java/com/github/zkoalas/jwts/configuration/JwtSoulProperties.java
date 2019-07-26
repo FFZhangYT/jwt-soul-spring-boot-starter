@@ -1,4 +1,4 @@
-package org.yt.jwts.configuration;
+package com.github.zkoalas.jwts.configuration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

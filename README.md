@@ -1,14 +1,14 @@
 # jwt-soul-spring-boot-starter
 
-[![](https://jitpack.io/v/FFZhangYT/Jwt-soul-spring-boot-starter.svg)](https://jitpack.io/#FFZhangYT/Jwt-soul-spring-boot-starter)
+[![](https://jitpack.io/v/FFZhangYT/jwt-soul-spring-boot-starter.svg)](https://jitpack.io/#FFZhangYT/Jwt-soul-spring-boot-starter)
 
 ### 简述
     jwt-soul的springboot使用依赖
 ### 依赖方式
     <dependency>
-        <groupId>com.github.FFZhangYT</groupId>
-        <artifactId>Jwt-soul-spring-boot-starter</artifactId>
-        <version>3.0.1</version>
+        <groupId>com.github.zkoalas</groupId>
+        <artifactId>jwt-soul-spring-boot-starter</artifactId>
+        <version>3.0.0</version>
     </dependency>
     
     <repositories>

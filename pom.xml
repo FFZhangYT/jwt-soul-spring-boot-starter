@@ -4,23 +4,45 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.yt.jwts</groupId>
+    <groupId>com.github.zkoalas</groupId>
     <artifactId>jwt-soul-spring-boot-starter</artifactId>
-    <version>3.0.3</version>
+    <version>3.0.0</version>
     <packaging>jar</packaging>
+    <name>jwt-soul-spring-boot-starter</name>
+    <description>jwt-soul-spring-boot-starter is a springboot jwt development kit.</description>
+    <url>https://github.com/zkoalas/jwt-soul-spring-boot-starter</url>
 
+    <licenses>
+        <license>
+            <name>The MIT License (MIT)</name>
+            <url>https://github.com/zkoalas/jwt-soul-spring-boot-starter/blob/master/LICENSE</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>zhangyeting</name>
+            <email>809981203@qq.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:zkoalas/jwt-soul-spring-boot-starter.git</connection>
+        <developerConnection>scm:git:git@github.com:zkoalas/jwt-soul-spring-boot-starter.git</developerConnection>
+        <url>git@github.com:zkoalas/jwt-soul-spring-boot-starter.git</url>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <springboot.version>2.0.1.RELEASE</springboot.version>
-        <jwtsoul.version>3.0.3</jwtsoul.version>
+        <jwtsoul.version>3.0.0</jwtsoul.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.github.FFZhangYT</groupId>
+            <groupId>com.github.zkoalas</groupId>
             <artifactId>jwt-soul</artifactId>
             <version>${jwtsoul.version}</version>
         </dependency>
@@ -37,23 +59,123 @@
             <version>${springboot.version}</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    <repositories>
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <!--Compiler-->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <version>3.8.1</version>
+                            <configuration>
+                                <source>8</source>
+                                <target>8</target>
+                            </configuration>
+                        </plugin>
+                        <!-- Javadoc -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>3.1.1</version>
+                            <configuration>
+                                <additionalOptions>
+                                    <additionalOption>-Xdoclint:none</additionalOption>
+                                </additionalOptions>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <phase>package</phase>
+                                    <goals>
+                                        <goal>jar</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+        <profile>
+            <id>release</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <!--Compiler-->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <version>3.8.1</version>
+                            <configuration>
+                                <source>8</source>
+                                <target>8</target>
+                            </configuration>
+                        </plugin>
+                        <!-- Source -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-source-plugin</artifactId>
+                            <version>3.1.0</version>
+                            <executions>
+                                <execution>
+                                    <phase>package</phase>
+                                    <goals>
+                                        <goal>jar-no-fork</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <!-- Javadoc -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>3.1.1</version>
+                            <configuration>
+                                <additionalOptions>
+                                    <additionalOption>-Xdoclint:none</additionalOption>
+                                </additionalOptions>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <phase>package</phase>
+                                    <goals>
+                                        <goal>jar</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <!-- GPG -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-gpg-plugin</artifactId>
+                            <version>1.6</version>
+                            <executions>
+                                <execution>
+                                    <phase>verify</phase>
+                                    <goals>
+                                        <goal>sign</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>oss</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <id>oss</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
-    </repositories>
+    </distributionManagement>
 </project>

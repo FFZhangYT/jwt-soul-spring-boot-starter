@@ -1,4 +1,4 @@
-package org.yt.jwts.configuration;
+package com.github.zkoalas.jwts.configuration;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
