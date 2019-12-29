@@ -6,7 +6,7 @@
 
     <groupId>com.github.zkoalas</groupId>
     <artifactId>jwt-soul-spring-boot-starter</artifactId>
-    <version>3.0.0</version>
+    <version>3.0.2</version>
     <packaging>jar</packaging>
     <name>jwt-soul-spring-boot-starter</name>
     <description>jwt-soul-spring-boot-starter is a springboot jwt development kit.</description>
@@ -37,7 +37,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <springboot.version>2.0.1.RELEASE</springboot.version>
-        <jwtsoul.version>3.0.0</jwtsoul.version>
+        <jwtsoul.version>3.0.2</jwtsoul.version>
     </properties>
 
     <dependencies>

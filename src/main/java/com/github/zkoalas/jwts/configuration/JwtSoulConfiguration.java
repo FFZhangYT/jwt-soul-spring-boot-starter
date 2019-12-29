@@ -2,10 +2,12 @@ package com.github.zkoalas.jwts.configuration;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -24,6 +26,7 @@ import java.util.List;
 /**
  * 框架配置
  */
+@Configuration
 @EnableConfigurationProperties(JwtSoulProperties.class)
 public class JwtSoulConfiguration implements WebMvcConfigurer, ApplicationContextAware {
     @Autowired
@@ -70,11 +73,11 @@ public class JwtSoulConfiguration implements WebMvcConfigurer, ApplicationContex
             excludePath = new String[]{};
         }
         if (properties.getStoreType() == null || properties.getStoreType() == 0) {
-            registry.addInterceptor(new TokenInterceptor(localTokenStore(),properties.getStoreType()))
+            registry.addInterceptor(new TokenInterceptor(localTokenStore()))
                     .addPathPatterns(path)
                     .excludePathPatterns(excludePath);
         }else{
-            registry.addInterceptor(new TokenInterceptor(tokenStore(), properties.getMaxToken(),properties.getStoreType()))
+            registry.addInterceptor(new TokenInterceptor(tokenStore(), properties.getMaxToken()))
                     .addPathPatterns(path)
                     .excludePathPatterns(excludePath);
         }
