@@ -36,7 +36,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <springboot.version>2.0.1.RELEASE</springboot.version>
+        <springboot.version>2.5.15</springboot.version>
         <jwtsoul.version>3.0.2</jwtsoul.version>
     </properties>
 
